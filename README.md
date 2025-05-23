@@ -1,2 +1,3 @@
 # python_nmap
 Script pequeño que integra nmap con Python para hacer búsqueda de hosts, puertos y servicios. Permite el uso de la API de ChatGPT para analizar cuáles hosts son más vulnerables, y las próximas etapas en un ejercicio de hacking ético.
+Se debe utilizar la propia API key del usuario en el archivo .env para acceder a la API de ChatGPT. Como el uso de la API de ChatGPT es paga, se cobra por los tokens utilizados en la consulta. Si se quiere usar un modelo diferente al que está por default "gpt-4-0125-preview" para aminorar los costos, o para tener un resultado específico, se puede modificar la función priorizar_hosts.
