@@ -1,6 +1,6 @@
 # python_nmap
 Script pequeño que integra nmap con Python para hacer búsqueda de hosts, puertos y servicios. Permite el uso de la API de ChatGPT para analizar cuáles hosts son más vulnerables, y las próximas etapas en un ejercicio de hacking ético.
-Se debe utilizar la propia API key del usuario en el archivo .env para acceder a la API de ChatGPT. Como el uso de la API de ChatGPT es paga, se cobra por los tokens utilizados en la consulta. Si se quiere usar un modelo diferente al que está por default "gpt-4-0125-preview" para aminorar los costos, o para tener un resultado específico, se puede modificar la función priorizar_hosts.
+Como el uso de la API de ChatGPT es paga, se cobra por los tokens utilizados (importante) en la consulta. 
 
 # Instalación
 
@@ -25,6 +25,7 @@ Con las dependencias ya instaladas, se debe abrir el archivo .env y asignar la A
 # Uso
 El script se utiliza al llamar las funciones que se encuentran en el condición al final del código. Se debe modificar según el uso que se le quiera dar al script (por defecto utiliza la API de ChatGPT entonces va producir un error si no se asigna en el archivo .env).
 También es importante cambiar la IP que se puso como placeholder por la red (junto a su submáscara de red en notación CIDR IPv4) de interés para que sea analizada.
+Si se quiere usar un modelo diferente al que está por default "gpt-4-0125-preview" para aminorar los costos, o para tener un resultado específico, se puede modificar la función priorizar_hosts.
 
 # Problemas comunes
 En Linux es necesario utilizar ``` sudo ``` para ejecutar el script debido a la funcionalidad propia de nmap (en especial si el descubrimiento o análisis que se quiere realizar contiene hosts Windows en la red). Esto puede producir un error en el que algunas de las dependencias parecen no haber sido instaladas. Esto ocurre debido al uso de privilegios elevados, donde se puede hacer uso de un intérprete de Python que es diferente al del entorno virtual creado. Para solucionarlo basta con ejecutar el script usando el Python que se encuentra en el entorno virtual en la ruta (según la recomendación en la sección de instalación) ``` .venv/bin/python ``` para Linux.
